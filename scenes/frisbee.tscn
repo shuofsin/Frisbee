@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://7uyt86l8h0nh"]
+
+[ext_resource type="Script" path="res://scripts/frisbee.gd" id="1_7jyft"]
+[ext_resource type="Texture2D" uid="uid://cfykwq4538x68" path="res://sprites/frisbee..png" id="1_h1iwd"]
+[ext_resource type="Texture2D" uid="uid://cblhxpv2vpcs2" path="res://sprites/arrow.png" id="3_3f4cv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlwb0"]
+radius = 15.0333
+
+[node name="frisbee" type="Node2D"]
+script = ExtResource("1_7jyft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h1iwd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xlwb0")
+
+[node name="guide" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="guide"]
+texture = ExtResource("3_3f4cv")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

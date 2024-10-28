@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://byns305vahr44"]
+
+[ext_resource type="PackedScene" uid="uid://7uyt86l8h0nh" path="res://scenes/frisbee.tscn" id="1_b4y3j"]
+
+[node name="World" type="Node2D"]
+
+[node name="frisbee" parent="." instance=ExtResource("1_b4y3j")]
+position = Vector2(77, 52)
